@@ -104,6 +104,19 @@ function copyArguments(args){
     return Array.prototype.map.call(args, function(e){ return e;});
 }
 
+function toArgumentString(v){
+    if(v === null)
+        return 'null';
+    if(typeof v === 'function')
+        return 'function '+v.name;
+    if(typeof v === 'object')
+        return JSON.stringify(v);
+    if(typeof v === 'string')
+        return "'"+v+"'";
+    
+    return String(v);
+}
+
 
 var thringsHandlers = (function(){
     var scripts = [];
@@ -114,7 +127,7 @@ var thringsHandlers = (function(){
     return {
         onPop: function(completionValue){
             var frame = this;
-            console.log('Leaving frame', frameName(frame), 'with completion value', completionValue);
+            //console.log('Leaving frame', frameName(frame), 'with completion value', completionValue);
             
             if('throw' in completionValue){
                 scripts.push(frame.script);
@@ -134,8 +147,8 @@ var thringsHandlers = (function(){
                     console.group();
                     scripts.forEach(function(script, i){
                         //allKeys(script);
-                        console.log(script.url, ': l.'+script.getOffsetLine(offsets[i]), frameNames[i], '(',  
-                        'arguments', JSON.stringify(argCopies[i]), ')' );
+                        console.log(script.url+': l.'+script.getOffsetLine(offsets[i]) +' '+
+                            frameNames[i]+ '('+ argCopies[i].map(toArgumentString).join(', ') + ')' );
                     })
                     console.groupEnd();
                     
@@ -149,7 +162,7 @@ var thringsHandlers = (function(){
 
 
 dbg.onEnterFrame = function(frame){
-    console.log('Entering frame', frameName(frame));
+    //console.log('Entering frame', frameName(frame));
     //allKeys(frame);
     //frameEnvIds(frame);
 
@@ -157,7 +170,7 @@ dbg.onEnterFrame = function(frame){
     //allKeys(env);
     
     var names = env.names();
-    console.log('names', names);
+    //console.log('names', names);
     
     frame.onPop = thringsHandlers.onPop;
 };
@@ -193,11 +206,5 @@ scripts.forEach(function(s){
 console.timeEnd('bp');
 console.log('breakpoints', bps);
 */
-
-
-
-
-
-
 
 

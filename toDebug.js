@@ -4,12 +4,12 @@ function run(){
     var a = 1;
     var o = {e:1, f:'a'};
     
-    function f(s){
+    function f(s, grr){
         throw new Error('yo');
     }
     
     function g(o){
-        return f(6) + 2 + a;
+        return f(6, 'bla') + 2 + a;
     }
 
     o.g = g;
