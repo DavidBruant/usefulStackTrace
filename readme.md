@@ -1,6 +1,6 @@
 # usefulStackTrace
 
-A little script to have error 
+A little script to have good error stack traces in Firefox.
 
 # Make it work
 
