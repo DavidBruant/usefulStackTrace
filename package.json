@@ -1,1 +1,28 @@
-{"license": "", "description": "", "contributors": [], "author": "bruantd", "url": "", "dependencies": ["api-utils", "addon-kit"], "version": "initial.rev62", "lib": "lib", "fullName": "Useful Stack Trace", "main": "main", "id": "jid0-seOApaQAzWFTba4av7yeIuNQiAg", "name": "useful-stack-trace"}
+{
+    "version": "initial.rev62",
+    "license": "MIT",
+
+    "description": "An addon that shows useful stack traces in the devtools",
+
+    "contributors": [],
+    "author": "David Bruant <bruant.d@gmail.com>",
+    "url": "https://github.com/DavidBruant/usefulStackTrace",
+
+    "dependencies": ["api-utils", "addon-kit"],
+
+    "fullName": "Useful Stack Trace",
+    "name": "useful-stack-trace",
+    "preferences": [
+        {
+            "name": "enabled",
+            "title": "Enabled",
+            "description": "Toggle to enable or disable the pref",
+            "type": "bool",
+            "value": false
+        }
+    ],
+
+    "main": "main",
+    "lib": "lib",
+    "id": "jid0-seOApaQAzWFTba4av7yeIuNQiAg"
+}
