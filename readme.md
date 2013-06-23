@@ -1,17 +1,17 @@
 # usefulStackTrace
 
-A little script to have good error stack traces in Firefox.
+A little addon to have good error stack traces in Firefox.
 
 # Make it work
 
 To have this working:
 
-1. [Allow Scratchpad to run on Chrome](https://developer.mozilla.org/en-US/docs/Tools/Scratchpad#Using_Scratchpad_to_access_Firefox_internals)
-1. Open usefulStackTrace.js in scratchpad
-1. Choose "browser" in the "Environment" menu (a little thing appears to tell you to be careful)
-1. Run the script (Ctrl+R)
-1. Let your application throw exceptions! And you'll see a stack trace with files,
-line numbers, function names and even function arguments value!
+1. Get [cfx](https://addons.mozilla.org/en-US/developers/docs/sdk/latest/dev-guide/tutorials/getting-started-with-cfx.html)
+1. run ````cfx xpi```` at the root of the directory
+1. Install the add-on from files (In Firefox: file -> open -> (pick the xpi file))
+1. [(after I've removed some ugly hardcoding)](https://github.com/DavidBruant/usefulStackTrace/blob/98d06390e7510841913d37c6ab2874fa99b0b250/lib/main.js#L102)
+Open the [test/index.html](./test/index.html) file, open your console, click ````run````, notice the stack trace with arguments
 
-An index.html file is provided for you to test and make sure it works. Follow the steps then clic "Run".
-An useful stack trace should be displayed in the console.
+# Licence
+
+[MIT](./licence)
