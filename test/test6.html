@@ -12,18 +12,19 @@
             try{
                 t('fail');
             }
-            catch(e){}
+            catch(e){
+                throw new Error('success')
+            }
 
-            t('success');
         }, 500)
     </script>
 
 
-    <title> Test UsefulStackTrace 5 </title>
+    <title> Test UsefulStackTrace 6 </title>
 </head>
 
 <body>
-<p>An error is caught, another is thrown after a new frame is entered (only the last one is tracked)</p>
+<p>An error is thrown, caught and a different error is thrown from the same frame.</p>
 
 </body>
 </html>

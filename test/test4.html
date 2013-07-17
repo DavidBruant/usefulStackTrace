@@ -4,22 +4,22 @@
     <meta charset="utf-8">
 
     <script>
-        function t(){
-            throw new Error('Ziena')
+        function t(msg){
+            throw new Error(msg)
         }
 
-        setTimeout(function failure(){
+        setTimeout(function (){
             try{
-                t();
+                t('failure');
             }
             catch(e){}
 
-            setTimeout(function success(){ t() }, 0);
+            setTimeout(function (){ t('success') }, 0);
         }, 500)
     </script>
 
 
-    <title> Test UsefulStackTrace 3 </title>
+    <title> Test UsefulStackTrace 4 </title>
 </head>
 
 <body>
