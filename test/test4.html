@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <script>
+        function t(){
+            throw new Error('Ziena')
+        }
+
+        setTimeout(function failure(){
+            try{
+                t();
+            }
+            catch(e){}
+
+            setTimeout(function success(){ t() }, 0);
+        }, 500)
+    </script>
+
+
+    <title> Test UsefulStackTrace 3 </title>
+</head>
+
+<body>
+<p>An error is caught, then an error is thrown (only the last one is recorded and stacks aren't mixed between the 2 errors)</p>
+
+</body>
+</html>

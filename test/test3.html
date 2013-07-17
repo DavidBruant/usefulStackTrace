@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <script>
+        setTimeout(function top(){
+
+            function t(){
+                throw new Error('Finch')
+            }
+
+            try{
+                t();
+            }
+            catch(e){
+                console.log('catching and rethrowing');
+                throw e;
+            }
+
+        }, 500)
+    </script>
+
+
+    <title> Test UsefulStackTrace 3 </title>
+</head>
+
+<body>
+<p>Make sure the error is thrown even if caught. Inform on the user that the error was caught and rethrown from somewhere else</p>
+
+</body>
+</html>

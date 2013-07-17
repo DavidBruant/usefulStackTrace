@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <script>
+        function t(msg){
+            throw new Error(msg)
+        }
+
+        setTimeout(function top(){
+            try{
+                t('fail');
+            }
+            catch(e){}
+
+            t('success');
+        }, 500)
+    </script>
+
+
+    <title> Test UsefulStackTrace 3 </title>
+</head>
+
+<body>
+<p>An error is caught, another is thrown after a new frame is entered.</p>
+
+</body>
+</html>
