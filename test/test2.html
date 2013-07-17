@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <script type="application/javascript">
+        // from attachement at https://bugzilla.mozilla.org/show_bug.cgi?id=503244
+        document.addEventListener('resize', function() { throw 'resized!' }, false);
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        document.documentElement.dispatchEvent(event);
+    </script>
+
+
+    <title> Test UsefulStackTrace 2 </title>
+</head>
+
+<body>
+</body>
+</html>
