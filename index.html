@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://rawgithub.com/necolas/normalize.css/master/normalize.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            padding: 1% 15%;
+        }
+
+    </style>
+
+    <title> Useful Stack Trace </title>
+</head>
+
+<body>
+    <h1>Useful Stack Trace</h1>
+    <p><a href="useful-stack-trace.xpi">Useful Stack Trace</a> is a Firefox (23+) addon that provides useful
+        informations when a error has been thrown without being caught.</p>
+
+    <p>
+        Useful Stack Trace makes use of th Debugger API and will slow down your webpages. For that reason, for it to
+        be enabled and tracking running programs, two conditions need to be met:
+        <ul>
+            <li>The related checkbox in the devtools option panel needs to be checked
+            <li>Have the Firefox devtools open
+        </ul>
+        Once both conditions are met, go to the <a target="_blank" href="test/test1.html">test page</a>, click the "run"
+        button and look in the web console to see if you can see the stack trace.
+    </p>
+
+
+    <ul>
+        <li><a href="useful-stack-trace.xpi">Download</a>
+        <li><a href="https://github.com/DavidBruant/usefulStackTrace">Source</a>
+    </ul>
+
+</body>
+</html>
